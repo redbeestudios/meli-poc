@@ -1,0 +1,113 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>APP ITEMS</title>
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" media="screen" href="bower_components/handsontable/dist/handsontable.full.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body id="myApp">
+	<header>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">Brand</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+		        <li><a href="#">Link</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+	</header>
+	<div class="row">
+		<ul class="nav nav-pills nav-stacked col-md-2">
+			<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+			<li><a href="#">Link</a></li>
+		</ul>
+		<section class="col-md-6">
+			<div class="container">LISTA DE ITEMs</div>
+			<div>
+				<table id="table-list-items" class="table table-striped table-condensed">
+					<thead>
+						<tr>
+							<th><span>Titulo</span></th>
+							<th><span>Id</span></th>
+							<th><span>Precio</span></th>
+						</tr>
+					</thead>
+					<tbody  class="listItem">
+					</tbody>
+				</table>
+			</div>
+			<div>
+			  <div id="example1" class="hot handsontable htColumnHeaders"></div>
+			</div>
+			<div id="exampleTable"></div>	
+		</section>
+	</div>
+	<footer class="footer">
+		<div>
+			project BackBone
+		</div>
+	</footer>
+	<div id="detalle-item">
+	</div>
+	<script>
+		window.stade = '';
+		window.itemId = '';
+	</script>
+	<!--  _____TEMPLATES_____  -->
+	<script type="text/template" id="tplMostrarItem">
+		<td><%= title %></td>
+		<td><%= id %></td>
+		<td><%= price %></td>
+	</script>
+	<script type="text/template" id="tpldetalleItem">
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel"><b>Item: </b><%= title%></h4>
+		      </div>
+		      <div class="modal-body">
+		        <h4><%= price%></h4>
+				
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary atrasLibros">Atras</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</script>
+
+	<!--  _____DEPENDENCIAS_____  -->
+	<!--script src="http://docs.handsontable.com/pro/bower_components/handsontable-pro/dist/handsontable.full.min.js"></script-->
+	<script type="text/javascript" src="js/vendor/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/vendor/underscore-min.js"></script>
+	<script type="text/javascript" src="js/vendor/backbone.js"></script>
+	<script src="bower_components/handsontable/dist/handsontable.full.js"></script>
+
+	<!--App Backbone.js-->
+	<script type="text/javascript" src="js/backbone/init.js"></script>
+	<script type="text/javascript" src="js/backbone/models/item.js"></script>
+	<script type="text/javascript" src="js/backbone/collections/items.js"></script>
+	<script type="text/javascript" src="js/backbone/views/listItem.js"></script>
+	<script type="text/javascript" src="js/backbone/routes/route.js"></script>
+	</body>
+</html>
